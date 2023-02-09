@@ -6,26 +6,26 @@ import {Router} from "@angular/router";
 import {Result} from "../../models/result";
 
 @Component({
-  selector: 'app-popular',
-  templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.css']
+  selector: 'app-now-playing',
+  templateUrl: './now-playing.component.html',
+  styleUrls: ['./now-playing.component.css']
 })
-export class PopularComponent  implements  OnInit{
+export class NowPlayingComponent implements OnInit{
   movies: Movie[] = [];
   p: number = 1;
   search!: string;
   constructor(private moviesService: MoviesService , private router:Router ,private title:Title) { }
   ngOnInit() {
-    this.getPopularMovies(); // Call the method to get the top rated movies
+    this.getNowPlayingMovies(); // Call the method to get the top rated movies
     this.moviesService.search.subscribe((search: string) => {
       this.search = search; // Set the search value to the search variable
     });
-    this.title.setTitle('Popular'); // Set the title of the page
-}
+    this.title.setTitle('Now Playing'); // Set the title of the page
+  }
 
-  getPopularMovies() {
+  getNowPlayingMovies() {
     for (let i = 1; i < 10; i++) { // Get the top rated movies from page 1 to 10
-      this.moviesService.getPopularMovies(i).subscribe((data: Result) => {
+      this.moviesService.getNowPlaying(i).subscribe((data: Result) => {
         let moviesTopRated = data.results; // Get the results from the API
         moviesTopRated.forEach(movie => {
           this.movies.push(movie); // Push the results to the movies array

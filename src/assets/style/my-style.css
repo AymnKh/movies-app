@@ -1,0 +1,12 @@
+.ngx-pagination .current{
+    background: #C92C6D !important;
+    color: #332C39 !important;
+}
+a:not([href]):not([class]), a:not([href]):not([class]):hover{
+    color: #C92C6D !important;
+}
+
+.form-control:focus {
+   border-color: #C92C6D !important;
+   box-shadow: 0 0 0 0 !important;
+}

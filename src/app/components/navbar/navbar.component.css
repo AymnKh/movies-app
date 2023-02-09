@@ -1,0 +1,13 @@
+a{
+  color: #F2F2F2 !important;
+}
+a.active {
+  color: #C92C6D !important;
+}
+.navbar-brand img {
+  width: 80px;
+  height: 50px;
+}
+.navbar{
+  background-color: #332C39;
+}

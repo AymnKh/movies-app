@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md  sticky-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/images/logo.gif" alt="logo">
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="ms-auto mt-sm-1">
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          placeholder="search"
+          name="search"
+          [(ngModel)]="search"
+          (input)="searchMovie()"
+        />
+      </div>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Top Rated</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/popular" routerLinkActive="active"
+            >Popular</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/now-playing"
+            routerLinkActive="active"
+            >Now Playing</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

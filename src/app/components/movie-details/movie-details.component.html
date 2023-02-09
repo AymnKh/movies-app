@@ -1,0 +1,53 @@
+<section id="main-header">
+  <img
+    class="card-img main-img"
+    src="https://image.tmdb.org/t/p/w500{{ movieDetails.backdrop_path }}"
+    alt="{{ movieDetails.original_title }}"
+  />
+</section>
+<section id="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3 mt-4">
+        <img
+          src="https://image.tmdb.org/t/p/w500{{ movieDetails.poster_path }}"
+          alt=""
+          class="poster"
+        />
+      </div>
+      <div class="col-sm-12 col-md-9 col-lg-9 mt-4">
+        <h1 class="text-center title">{{ movieDetails.title }}</h1>
+        <div class="movie__tag" *ngFor="let i of movieDetails.genres">
+          {{ i.name }}
+        </div>
+        <p>{{ movieDetails.overview }}</p>
+        <p *ngIf="movieDetails.budget > 0">
+          budget : {{ movieDetails.budget | currency }}
+        </p>
+        <p>Released : {{ movieDetails.release_date }}</p>
+
+        <div
+          class="movie__tag"
+          *ngFor="let x of movieDetails.production_companies"
+        >
+          {{ x.name }}
+        </div>
+        <h3 class="text-center lead title title">Watch trailer</h3>
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let item of movieVideos">
+            <iframe [src]="item | safe" allowfullscreen> </iframe>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h3 class="text-center lead title">Recommendations</h3>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let item of recommendations">
+      <app-movie-card [movie]="item" [inDetails]="true"></app-movie-card>
+    </ng-template>
+  </owl-carousel-o>
+</section>

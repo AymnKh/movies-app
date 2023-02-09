@@ -1,3 +1,7 @@
 .card{
   cursor: pointer;
 }
+.inDetails{
+  height: 412px;
+  width: 250px;
+}

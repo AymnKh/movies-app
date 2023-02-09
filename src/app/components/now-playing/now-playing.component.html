@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row text-center">
+    <div
+      class="col-md-4 col-lg-3 mt-2"
+      *ngFor="
+        let movie of movies
+          | search : search
+          | paginate : { itemsPerPage: 20, currentPage: p }
+      "
+    >
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </div>
+    <!-- pagination -->
+    <pagination-controls
+      class="mt-2"
+      (pageChange)="p = $event"
+      (click)="changPageSmooth()"
+    ></pagination-controls>
+  </div>
+</div>

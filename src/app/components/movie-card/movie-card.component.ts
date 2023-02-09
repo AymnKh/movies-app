@@ -12,6 +12,7 @@ import {Router} from "@angular/router";
 export class MovieCardComponent {
 
   @Input('movie') movie!:Movie;
+  @Input('inDetails') inDetails:boolean = false;
 
   constructor(private  moviesService:MoviesService, private  router:Router) {
   }
