@@ -1,7 +1,31 @@
-.card{
+.card {
   cursor: pointer;
 }
-.inDetails{
+.inDetails {
   height: 412px;
   width: 250px;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+}
+.box::before {
+  content: attr(data-text);
+  position: absolute;
+  background-color: rgb(242 242 242);
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #c92c6d;
+  transition: 0.3s;
+  font-size: 0.75rem;
+  transform: translateX(calc(-100% - 5px));
+}
+.box:hover::before,
+.box:focus::before {
+  transform: translateX(0);
 }

@@ -10,13 +10,14 @@
     >
       <app-movie-card [movie]="movie"></app-movie-card>
     </div>
-    
+
     <!-- pagination -->
     <pagination-controls
       class="mt-2"
       (pageChange)="p = $event"
       (click)="changPageSmooth()"
     ></pagination-controls>
-   
+
   </div>
 </div>
+

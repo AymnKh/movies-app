@@ -1,12 +1,17 @@
-<div class="card text-center" [ngClass]="{ inDetails: inDetails }">
-  <img
-    src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+<section>
+  <div
+    class="card text-center box"
+    [attr.data-text]="movie.overview"
     (click)="movieDetails(movie.id)"
-    class="card-img-top"
-    alt="..."
-  />
-  <button (click)="getMovieVideos(movie.id)" class="btn btn-danger">
+    [ngClass]="{ inDetails: inDetails }"
+  >
+    <img
+      src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
+      class="card-img-top img-fluid"
+    />
+  </div>
+  <button (click)="getMovieVideos(movie.id)" class="btn btn-danger w-100">
     <i class="bi bi-youtube"></i>
     Watch Trailler
   </button>
-</div>
+</section>
