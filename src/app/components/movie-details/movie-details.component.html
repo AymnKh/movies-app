@@ -43,11 +43,3 @@
     </div>
   </div>
 </section>
-<section>
-  <h3 class="text-center lead title">Recommendations</h3>
-  <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide *ngFor="let item of recommendations">
-      <app-movie-card [movie]="item" [inDetails]="true"></app-movie-card>
-    </ng-template>
-  </owl-carousel-o>
-</section>
